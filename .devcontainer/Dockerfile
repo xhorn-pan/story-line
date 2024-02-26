@@ -1,9 +1,8 @@
-FROM ubuntu:22.04
+FROM ubuntu:focal
 
-WORKDIR /home/
+WORKDIR /home/vscode
 
 COPY . .
 
 RUN bash ./setup.sh
-
-ENV PATH="/root/.cargo/bin:$PATH"
+ENV PATH="/home/vscode/.cargo/bin:$PATH"
