@@ -13,6 +13,10 @@ apt-get install -y \
   clang\
   protobuf-compiler
 
+#install nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 ## Install rustup and common components
 curl https://sh.rustup.rs -sSf | sh -s -- -y 
 rustup install nightly
