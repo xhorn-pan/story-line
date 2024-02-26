@@ -30,35 +30,16 @@ Besides Rust and Cargo, the image comes with the following Rust related tooling:
 #### Connecting to your Environment
 
 start `substrate-contracts-node`, set add forward addresses visibility to Public. 
-Use [contracts-ui](https://contracts-ui.substrate.io/?rpc=wss://your-dev-address-port9944)
+Use [contracts-ui](https://contracts-ui.substrate.io/?rpc=wss://your-dev-address-port9944) and set your dev address
+`?rpc=wss://your-dev-address-port9944`, also you need set all the forward ports `public`.
 
-#### Working
-
-Now that you're set up and connected, you should be able to work within your Codespaces environment.
-
-### Developing inside a Container
-
-Using [Visual Studio Code](https://code.visualstudio.com/) and a [specific extension](https://aka.ms/vscode-remote/download/extension), we can load this setup in a brand new local [Docker](https://docker.com/) container and use it as a full-featured development environment. Note that this approach requires a few more steps than using the online setup mentioned above. The advantages being that this works offline and there are no costs associated with this approach. It is a great way to play with a setup without having to install everything globally on one's machine!
-
-#### Requirements
-
-There are 3 main requirements: **VSCode**, **the Remote - Containers VSCode extension** and **Docker**.
-
-Follow the instruction [guide here](https://code.visualstudio.com/docs/remote/containers#_installation) and come back here once those 3 components are installed locally.
-
-### Setup
-
-To load this setup in a container, we need to point to it. We have many options here, the main ones being to connect to a repository and the other one to open a local folder with the codespace repo checked out. We are going to take the easiest approach and setup the code space directly from this repository.
-
-1. In VSCode, click on the green icon in the lower left corner.
-
-![](https://code.visualstudio.com/assets/docs/remote/common/remote-dev-status-bar.png)
-
-2. Choose  `Remote-Containers: Open Repository in container`
-3. Type `codespaces-examples/rust` in the prompt.
-4. Chose to create a unique volume.
-5. Wait until the container is setup and you are connected to it, at this point, it should ask you to install the Language server for the rust-analyzer, go ahead and click "Download now".
-![](https://user-images.githubusercontent.com/113/84297926-2ad3da00-ab03-11ea-8045-690eb0763d9f.png)
+you can setup a local nodejs application like [substrate-front-end-template](https://github.com/substrate-developer-hub/substrate-front-end-template)
+and set the `development.json` to your dev address
+```
+{
+  "PROVIDER_SOCKET": "wss://psychic-spork-gxxpjqp5g7jf9rp7-9944.app.github.dev/"
+}
+```
 
 That's it, you are all setup, you can modify and run the code in your local VSCode instance but the code and extensions will run in your container.
 
